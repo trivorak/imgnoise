@@ -9,3 +9,7 @@ Music experiments.
 - `PIL`
 - `MIDIUTIL` 
 install MIDIUTIL with `pip install -r requirements.txt`
+
+## What the code needs
+The current code takes a black and white image and converts the pixel information into midi information. 
+As the midi standard is 128 notes max you must convert an image into a 128 tall image.
