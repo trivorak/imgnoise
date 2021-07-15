@@ -14,15 +14,15 @@ MyMIDI = MIDIFile(1)
 MyMIDI.addTempo(track,time,tempo)
 
 # Open Image and get size
-im = Image.open('input.png');
+im = Image.open('output.png');
 width , height = im.size;
 
 for y in range(0,width):
 	for x in range(0, height):
-				red, green, blue, alpha = im.getpixel((y,x))
-				red = 255-red
-				if (red > 0):
-					MyMIDI.addNote(track,channel,abs(-127+x),time, duration, math.ceil(red/2))
+		colorValue=im.getpixel((y,x))
+		colorValue = 255-colorValue
+		if (colorValue > 0):
+			MyMIDI.addNote(track,channel,abs(-127+x),time, duration, math.ceil(colorValue/2))
 	time = time + 0.25
 
 with open("output.mid","wb") as output_file:
