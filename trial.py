@@ -16,13 +16,14 @@ MyMIDI = MIDIFile(1)
 MyMIDI.addTempo(track,time,tempo)
 
 #Get Color Funtion
-def getColor(w,h):
+def getColor(w,h):S
 	return im.getpixel((w,h))
 
 # Open Image and get size
 im = Image.open('output.png');
 width , height = im.size;
 
+# Main Loop
 for y in range(0,height):
 	for x in range(0, width):
 		if (x+1 < width and getColor(x,y) == getColor(x+1,y)):
@@ -34,5 +35,6 @@ for y in range(0,height):
 		countingVar = 1
 	time = 0
 
+# Write Midi file
 with open("output.mid","wb") as output_file:
 	MyMIDI.writeFile(output_file)
