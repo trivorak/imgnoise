@@ -16,7 +16,7 @@ MyMIDI = MIDIFile(1)
 MyMIDI.addTempo(track,time,tempo)
 
 #Get Color Funtion
-def getColor(w,h):S
+def getColor(w,h):
 	return im.getpixel((w,h))
 
 # Open Image and get size

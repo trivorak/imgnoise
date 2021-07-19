@@ -34,4 +34,4 @@ Grayscale filter w/trial_gs.py will output the midi where the color level contro
 
 #### Notes:
 - trial.py will merge consecutive notes
-
+- trial_split.py old version that did not merge notes
