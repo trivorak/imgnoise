@@ -33,7 +33,9 @@ for y in range(0,height):
 			MyMIDI.addControllerEvent(track,channel,time, controllerNumber, 0)
 		time = time + duration*countingVar
 		countingVar = 1
-	time = 0
+
+#Write note for daws that require a midi note
+MyMIDI.addNote(0,0,1,0,.25,1)
 
 # Write Midi file
 with open("barcodecc.mid","wb") as output_file:
