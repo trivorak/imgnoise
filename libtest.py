@@ -1,5 +1,4 @@
 from PIL import Image
-import math
 
 # Define List
 normList = []
