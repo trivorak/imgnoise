@@ -16,12 +16,14 @@ MyMIDI.addTempo(track,time,tempo)
 # Open Image and get size / Convert to greyscale
 im = Image.open('output.png');
 width , height = im.size;
+divisor = math.floor(height/128)
 im = im.convert(mode='L')
+im = im.resize((math.floor(width/divisor),math.floor(height/divisor)))
+width , height = im.size;
 
 for x in range(0,height):
 	for y in range(0, width):
 		colorValue=im.getpixel((y,x))
-		colorValue = 255-colorValue
 		if (colorValue > 0):
 			MyMIDI.addNote(track,channel,math.ceil(colorValue/2),time, duration, volume)
 		time = time + 0.25
