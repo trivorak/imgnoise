@@ -1,5 +1,6 @@
 *.json
 .DS_Store
 *.png
+*.mid
 *.jpg
 *.norm
