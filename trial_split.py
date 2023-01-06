@@ -18,7 +18,7 @@ width , height = im.size;
 
 for y in range(0,width):
 	for x in range(0, height):
-		if (im.getpixel((y,x)) < 128):
+		if (im.getpixel((y,x)) < 1):
 			MyMIDI.addNote(track,channel,abs(-127+x),time, duration, volume)
 	time = time + 0.25
 
