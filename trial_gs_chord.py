@@ -6,7 +6,7 @@ import math
 track = 0
 channel = 0
 time = 0
-duration = 0.25
+duration = 1.0
 tempo = 110
 volume = 100
 
