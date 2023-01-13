@@ -26,7 +26,7 @@ loopdivision = loopback*duration
 
 # Sets Range of Chords. Set OctaveRange and leave RangeMath alone
 octaveRange = 4
-rangeMath = (4*12)/128
+rangeMath = (octaveRange*12)/128
 
 for y in range(0,height):
 	for x in range(0, width):
