@@ -49,27 +49,26 @@ loopback = math.floor((len(aListInt)/ chordNoteCount))
 note = 0
 noteRange = (octaveRange * 12) / 128
 
-print(len(aListInt))
-print(len(aListInt)%3)
-
 # Make Sure List is divisible by 4
 # If not append to list
 for i in range(0,3-len(aListInt)%3):
 	aListInt.append(0)
 
-print(len(aListInt))
-print(len(aListInt)%4)
-
+# Main Loop
 for i in range(0,len(aListInt),3):
     noteLength = getDuration(aListInt[i+1])
-#    noteGap = getDuration(aListInt[i+3])/4
     noteGap = 0
+    musicNote = math.ceil(noteRange*aListInt[i]/2)
+    noteVelocity = math.ceil(aListInt[i+2]/2)
+    if (noteVelocity == 0):
+        noteVelocity = 1
+    elif (noteVelocity == 128):
+        noteVelocity = 127
 
     if (noteLength == 0):
         noteLength = 1/32
 
-    print(math.ceil(noteRange*(aListInt[i]/2)))
-    MyMIDI.addNote(track,channel,math.ceil(noteRange*aListInt[i]/2),time,noteLength,math.ceil(aListInt[i+2]/2))
+    MyMIDI.addNote(track,channel,musicNote,time,noteLength,noteVelocity)
     time = time + noteLength + noteGap
     note = note + 1
     if (note > loopback):
